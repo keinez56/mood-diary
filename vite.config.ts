@@ -10,4 +10,18 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3001',
+        changeOrigin: true,
+        configure: (proxy, options) => {
+          // 如果本地沒有 API 服務器，回退到模擬數據
+          proxy.on('error', (err, req, res) => {
+            console.log('API proxy error, using mock data')
+          })
+        }
+      }
+    }
+  }
 })
