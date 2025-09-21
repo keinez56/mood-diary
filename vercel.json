@@ -1,7 +1,7 @@
 {
   "functions": {
     "api/moods.js": {
-      "runtime": "@vercel/node@3.0.7"
+      "runtime": "@vercel/node@3.2.0"
     }
   },
   "rewrites": [
