@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Mood, MoodType } from '@/types';
+import { Mood } from '@/types';
 import { api, CreateMoodRequest } from '@/lib/api';
 
 export const useMoods = () => {
